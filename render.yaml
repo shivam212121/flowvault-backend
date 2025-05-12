@@ -13,9 +13,20 @@ services:
       - key: PYTHON_VERSION
         value: "3.11"
       - key: DATABASE_URL
-        value: "YOUR_SUPABASE_POSTGRESQL_CONNECTION_URI" # Placeholder - User must provide
+        value: "postgresql://postgres:Meowmeow%4069@db.fcopsfcoochqgqzffryl.supabase.co:5432/postgres"
       - key: CLERK_SECRET_KEY
-        value: "YOUR_CLERK_SECRET_KEY" # Placeholder - User must provide
+        value: "sk_test_nOpZoN0mFzrJACs2o6qS0l1FsqdeQBtbZA6yHQ0e5X"
+      - key: CLERK_PEM_PUBLIC_KEY
+        value: |-
+          -----BEGIN PUBLIC KEY-----
+          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwIniR1s5uHVu4VM06rKM
+          pLekEuz4vJD/qfLpDoUkgrUHN2+6kka4kigRL8NjTzg4rHK76Ds0gbNd+Zn1vsv6
+          orqT7sHx0ct8hUP/qGfz6DpuV1IKSGNh46DX6EWXGC3jeh+vcdSiEiM7j4PfaVi9
+          tIHZ0wi/4TEB9U1QRBU2Dh4sbU7y2VbvuCgt6d7M85NprJQCW06YT9/fuPan7skn
+          itgCZ/cf3lfgh8z2iCIW3vHxGB5sETTbN/cfZzIFk35GW+iuesAT5bKghztiepoY
+          sM22TzS3TuCsYUsxNtxRK1YV77bR6fbheCf+pcci+auwc+Q4uMCluzkbIBrL7Xkg
+          IQIDAQAB
+          -----END PUBLIC KEY-----
       - key: REDIS_URL
         fromService:
           type: redis
@@ -24,14 +35,14 @@ services:
       - key: APP_ENV
         value: "production"
       - key: S3_BUCKET_NAME
-        value: "your-s3-bucket-for-flowvault" # Placeholder
+        value: "your-s3-bucket-for-flowvault" # Placeholder - update in Render UI if using S3
       - key: S3_ACCESS_KEY_ID
-        value: "YOUR_S3_ACCESS_KEY_ID" # Placeholder
+        value: "YOUR_S3_ACCESS_KEY_ID" # Placeholder - update in Render UI if using S3
       - key: S3_SECRET_ACCESS_KEY
-        value: "YOUR_S3_SECRET_ACCESS_KEY" # Placeholder
+        value: "YOUR_S3_SECRET_ACCESS_KEY" # Placeholder - update in Render UI if using S3
       - key: S3_REGION
-        value: "your-s3-bucket-region" # Placeholder
-      - key: RENDER_SERVICE_TYPE # Added for entrypoint.sh
+        value: "your-s3-bucket-region" # Placeholder - update in Render UI if using S3
+      - key: RENDER_SERVICE_TYPE
         value: "api"
     autoDeploy: true
 
@@ -45,9 +56,20 @@ services:
       - key: PYTHON_VERSION
         value: "3.11"
       - key: DATABASE_URL
-        value: "YOUR_SUPABASE_POSTGRESQL_CONNECTION_URI" # Placeholder
+        value: "postgresql://postgres:Meowmeow%4069@db.fcopsfcoochqgqzffryl.supabase.co:5432/postgres"
       - key: CLERK_SECRET_KEY
-        value: "YOUR_CLERK_SECRET_KEY" # Placeholder
+        value: "sk_test_nOpZoN0mFzrJACs2o6qS0l1FsqdeQBtbZA6yHQ0e5X"
+      - key: CLERK_PEM_PUBLIC_KEY
+        value: |-
+          -----BEGIN PUBLIC KEY-----
+          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwIniR1s5uHVu4VM06rKM
+          pLekEuz4vJD/qfLpDoUkgrUHN2+6kka4kigRL8NjTzg4rHK76Ds0gbNd+Zn1vsv6
+          orqT7sHx0ct8hUP/qGfz6DpuV1IKSGNh46DX6EWXGC3jeh+vcdSiEiM7j4PfaVi9
+          tIHZ0wi/4TEB9U1QRBU2Dh4sbU7y2VbvuCgt6d7M85NprJQCW06YT9/fuPan7skn
+          itgCZ/cf3lfgh8z2iCIW3vHxGB5sETTbN/cfZzIFk35GW+iuesAT5bKghztiepoY
+          sM22TzS3TuCsYUsxNtxRK1YV77bR6fbheCf+pcci+auwc+Q4uMCluzkbIBrL7Xkg
+          IQIDAQAB
+          -----END PUBLIC KEY-----
       - key: REDIS_URL
         fromService:
           type: redis
@@ -63,7 +85,7 @@ services:
         value: "YOUR_S3_SECRET_ACCESS_KEY"
       - key: S3_REGION
         value: "your-s3-bucket-region"
-      - key: RENDER_SERVICE_TYPE # Added for entrypoint.sh
+      - key: RENDER_SERVICE_TYPE
         value: "worker"
     autoDeploy: true
 
