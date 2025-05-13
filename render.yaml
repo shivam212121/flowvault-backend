@@ -96,3 +96,10 @@ services:
     ipAllowList: [] # Or configure specific IPs if needed; empty allows all Render services
     maxmemoryPolicy: "allkeys-lru" # Example policy
 
+services:
+  - type: web
+    name: flowvault-backend
+    env: docker
+    plan: free
+    autoDeploy: true
+
